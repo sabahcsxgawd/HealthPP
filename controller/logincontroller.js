@@ -200,8 +200,8 @@ async function doLoginPatient(req, res) {
     SELECT *
     FROM PATIENTS
     WHERE 
-    EMAIL = :email
-    AND PASSWORD = :password
+    EMAIL = $1
+    AND PASSWORD = $2
     `;
   const binds = {
     email: req.body.email,
@@ -265,8 +265,8 @@ async function doLoginDoctor(req, res) {
 	JOIN DOCTORS D USING ( EID )
 	JOIN HOSPITALS H USING ( HID ) 
   WHERE
-	E.EMAIL = : email 
-	AND E.PASSWORD = : password
+	E.EMAIL = $1
+	AND E.PASSWORD = $2
     `;
   const binds = {
     email: req.body.email,
