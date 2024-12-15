@@ -40,10 +40,10 @@ async function doLoginAdmin(req, res) {
     res.json(userObject);
   } else {
     const userObject = {
-      EMAIL: result.rows[0].EMAIL,
+      EMAIL: result.rows[0].email,
       ROLE: "admin",
-      AID: result.rows[0].AID,
-      NAME: result.rows[0].NAME,
+      AID: result.rows[0].aid,
+      NAME: result.rows[0].name,
       success: true,
     };
 
@@ -100,11 +100,11 @@ async function doLoginReceptionist(req, res) {
     res.json(userObject);
   } else {
     const userObject = {
-      EMAIL: result.rows[0].EMAIL,
+      EMAIL: result.rows[0].email,
       ROLE: "receptionist",
-      EID: result.rows[0].EID,
-      NAME: result.rows[0].NAME,
-      HID: result.rows[0].HID,
+      EID: result.rows[0].eid,
+      NAME: result.rows[0].name,
+      HID: result.rows[0].hid,
       success: true,
     };
 
@@ -163,12 +163,12 @@ async function doLoginLabAssistant(req, res) {
     res.json(userObject);
   } else {
     const userObject = {
-      EMAIL: result.rows[0].EMAIL,
+      EMAIL: result.rows[0].email,
       ROLE: "Lab Assistant",
-      EID: result.rows[0].EID,
-      NAME: result.rows[0].NAME,
-      HID: result.rows[0].HID,
-      LABNAME: result.rows[0].LABNAME,
+      EID: result.rows[0].eid,
+      NAME: result.rows[0].name,
+      HID: result.rows[0].hid,
+      LABNAME: result.rows[0].labname,
       success: true,
     };
 
@@ -216,11 +216,11 @@ async function doLoginPatient(req, res) {
     res.json(userObject);
   } else {
     const userObject = {
-      EMAIL: result.rows[0].EMAIL,
+      EMAIL: result.rows[0].email,
       ROLE: "patient",
-      PID: result.rows[0].PID,
-      FIRST_NAME: result.rows[0].FIRST_NAME,
-      LAST_NAME: result.rows[0].LAST_NAME,
+      PID: result.rows[0].pid,
+      FIRST_NAME: result.rows[0].first_name,
+      LAST_NAME: result.rows[0].last_name,
       success: true,
     };
 
@@ -281,11 +281,11 @@ async function doLoginDoctor(req, res) {
     res.json(userObject);
   } else {
     const userObject = {
-      EMAIL: result.rows[0].EMAIL,
+      EMAIL: result.rows[0].email,
       ROLE: "doctor",
-      EID: result.rows[0].EID,
-      NAME: result.rows[0].NAME,
-      HID: result.rows[0].HID,
+      EID: result.rows[0].eid,
+      NAME: result.rows[0].name,
+      HID: result.rows[0].hid,
       success: true,
     };
 
