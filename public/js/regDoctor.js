@@ -12,19 +12,23 @@ let doctorSignUpInfo = {
 };
 
 
-async function start(){
-  
+async function start() {
+
   let result = await fetch("http://localhost:4200/reg/getDocSpeciality", {
-        method: "GET",
-        headers: {
-          "Content-Type": "application/json",
-        },
-      });
-      result = await result.json();
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+    },
+  });
+
+  result = await result.json();
+
   let specialityStr = "";
-  for(let i=0; i<result.length; i++){
-    specialityStr += `  <option value="${result[i].SPECIALITY}">${result[i].SPECIALITY}</option>`
+
+  for (let i = 0; i < result.length; i++) {
+    specialityStr += `  <option value="${result[i].speciality}">${result[i].speciality}</option>`
   }
+
   let div1 = document.getElementById('specialityDiv');
   div1.innerHTML = "";
   div1.innerHTML += `<label for="exampleFormControlInput4" class="form-label"
@@ -243,9 +247,9 @@ let login = async function (doctorSignUpInfo) {
     },
   });
   result = await result.json();
-  if(result.success) {
+  if (result.success) {
     let flag = confirm('Your Registration is pending. Please wait for admin approval by checking your email.');
-    if(flag) {
+    if (flag) {
       window.location.replace("http://localhost:4200/");
     }
   }

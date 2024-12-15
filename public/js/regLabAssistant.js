@@ -23,7 +23,7 @@ async function start(){
       result = await result.json();
   let labnameStr = "";
   for(let i=0; i<result.length; i++){
-    labnameStr += `  <option value="${result[i].LABNAME}">${result[i].LABNAME}</option>`
+    labnameStr += `  <option value="${result[i].labname}">${result[i].labname}</option>`
   }
   let div1 = document.getElementById('labDiv');
   div1.innerHTML = "";
