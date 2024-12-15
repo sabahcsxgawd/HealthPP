@@ -51,7 +51,7 @@ async function doRegPatient(req, res) {
     }
 
     let result1 = await database.execute(sql1, binds1);
-    // console.log(result1);
+
     if (result1.rows[0].PID_COUNT > 0) {
         let tempObj = {
             success: false,
@@ -70,7 +70,7 @@ async function doRegPatient(req, res) {
     }
 
     let result2 = await database.execute(sql2, binds2);
-    // console.log(result2);
+
     if (result2.rows[0].PEMAIL_COUNT > 0) {
         let tempObj = {
             success: false,
@@ -88,7 +88,7 @@ async function doRegPatient(req, res) {
     }
 
     let result3 = await database.execute(sql3, binds3);
-    // console.log(result3);
+
     if (result3.rows[0].PPHONE_COUNT > 0) {
         let tempObj = {
             success: false,
@@ -115,7 +115,7 @@ async function doRegPatient(req, res) {
         PASSWORD: req.body.password
     };
     let result = await database.execute(sql, binds);
-    // console.log(result);
+
     let tempObj = {
         success: true
     };
@@ -265,7 +265,7 @@ async function doRegLabAssistant(req, res) {
     }
 
     let result1 = await database.execute(sql1, binds1);
-    // console.log(result1);
+
     if (result1.rows[0].EID_COUNT > 0) {
         let tempObj = {
             success: false,
@@ -284,7 +284,7 @@ async function doRegLabAssistant(req, res) {
     }
 
     let result2 = await database.execute(sql2, binds2);
-    // console.log(result2);
+
     if (result2.rows[0].EEMAIL_COUNT > 0) {
         let tempObj = {
             success: false,
@@ -302,7 +302,7 @@ async function doRegLabAssistant(req, res) {
     }
 
     let result3 = await database.execute(sql3, binds3);
-    // console.log(result3);
+
     if (result3.rows[0].EPHONE_COUNT > 0) {
         let tempObj = {
             success: false,
@@ -358,7 +358,7 @@ async function doRegReceptionist(req, res) {
     }
 
     let result1 = await database.execute(sql1, binds1);
-    // console.log(result1);
+
     if (result1.rows[0].EID_COUNT > 0) {
         let tempObj = {
             success: false,
@@ -377,7 +377,7 @@ async function doRegReceptionist(req, res) {
     }
 
     let result2 = await database.execute(sql2, binds2);
-    // console.log(result2);
+
     if (result2.rows[0].EEMAIL_COUNT > 0) {
         let tempObj = {
             success: false,
@@ -395,7 +395,7 @@ async function doRegReceptionist(req, res) {
     }
 
     let result3 = await database.execute(sql3, binds3);
-    // console.log(result3);
+
     if (result3.rows[0].EPHONE_COUNT > 0) {
         let tempObj = {
             success: false,
@@ -448,7 +448,6 @@ async function getDocSpeciality(req, res) {
 
     };
     let result = await database.execute(sql, binds);
-    //console.log(result);
     res.json(result.rows);
 
 }
@@ -462,7 +461,7 @@ async function getLabName(req, res) {
 
     };
     let result = await database.execute(sql, binds);
-    //console.log(result);
+
     res.json(result.rows);
 
 }
